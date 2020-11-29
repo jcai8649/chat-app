@@ -35,9 +35,10 @@ io.on('connection', (socket) => {
     })
 
     socket.on('sendLocation', (locationData, callback) => {
-        io.emit('message', `https://google.com/maps?q=${locationData.lat},${locationData.long}`)
+        io.emit('locationMessage', `https://google.com/maps?q=${locationData.lat},${locationData.long}`)
         callback()
     })
+
 })
 
 server.listen(port, () => {
